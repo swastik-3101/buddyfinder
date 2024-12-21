@@ -23,7 +23,6 @@ if (fs.existsSync(ENCRYPTION_KEY_FILE)) {
 }
 ENCRYPTION_KEY = Buffer.from(ENCRYPTION_KEY, 'hex');
 
-
 const IV_LENGTH = 16; // Initialization vector length
 
 // Encryption function
@@ -69,7 +68,6 @@ function saveData(data) {
     fs.writeFileSync(DATA_FILE, JSON.stringify(existingData, null, 2), 'utf8');
 }
 
-
 function loadData() {
     try {
         if (fs.existsSync(DATA_FILE)) {
@@ -81,7 +79,6 @@ function loadData() {
     }
     return []; // Return an empty array if the file doesn't exist or is invalid
 }
-
 
 // Routes
 // Sign-Up Route
@@ -117,7 +114,6 @@ app.post('/signup', (req, res) => {
     }
 });
 
-
 // Login Route
 app.post('/login', (req, res) => {
     const { email, phone, password } = req.body;
@@ -144,14 +140,17 @@ app.post('/login', (req, res) => {
             const decryptedName = decrypt(user.name);
             const decryptedEmail = decrypt(user.email);
             const decryptedPhone = decrypt(user.phone);
+
             console.log(decryptedName);
             console.log(decryptedEmail);
             console.log(decryptedPhone);
 
+            // Send the successful login response with redirect URL
             return res.json({
                 message: 'Login Successful!',
                 name: decryptedName,
                 email: decryptedEmail,
+                redirectURL: 'http://localhost:5173', // Redirect URL after successful login
             });
         }
     } catch (error) {
@@ -160,11 +159,6 @@ app.post('/login', (req, res) => {
 
     res.status(401).json({ message: 'Invalid credentials!' });
 });
-
-// console.log('Encrypted data:', encryptedData);
-// console.log('Decrypted name:', decrypt(user.name));
-
-
 
 // Start server
 app.listen(port, () => {
