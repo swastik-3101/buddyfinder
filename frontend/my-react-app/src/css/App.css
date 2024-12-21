@@ -1,0 +1,125 @@
+/* General styles */
+body {
+    font-family: 'Roboto Condensed', sans-serif;
+    line-height: 1.6;
+  }
+  
+  /* Navbar styles */
+  .navbar {
+    background-color: #ffffff; /* Light theme background */
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .navbar.dark-mode {
+    background-color: #333333; /* Dark theme background */
+  }
+  
+  .navbar-logo img {
+    height: 40px;
+  }
+  
+  .navbar-toggler {
+    border: none;
+  }
+  
+  .hamburger span {
+    display: block;
+    width: 25px;
+    height: 3px;
+    margin: 4px 0;
+    background-color: #000;
+  }
+  
+  .hamburger span.dark-mode {
+    background-color: #fff;
+  }
+  
+  .nav-link {
+    font-size: 16px;
+    font-weight: 500;
+    color: #333;
+    margin-right: 20px;
+  }
+  
+  .nav-link:hover {
+    color: #007bff;
+  }
+  
+  /* Hero section */
+  .header1 {
+    background: url('../assets/images/hero-bg.jpg') center center/cover no-repeat;
+    height: 100vh;
+    color: #fff;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .header1 h1,
+  .header1 h2 {
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  }
+  
+  .header1 .btn {
+    margin-top: 20px;
+  }
+  
+  /* Footer styles */
+  .footer3 {
+    background-color: #f8f9fa;
+    padding: 30px 0;
+    color: #6c757d;
+    text-align: center;
+  }
+  
+  .footer3.dark-mode {
+    background-color: #333333;
+    color: #ffffff;
+  }
+  
+  .footer3 .foot-menu {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 20px;
+  }
+  
+  .footer3 .foot-menu-item {
+    display: inline-block;
+    margin: 0 15px;
+    font-size: 16px;
+  }
+  
+  .footer3 .social-list .soc-item {
+    display: inline-block;
+    margin: 0 10px;
+  }
+  
+  .footer3 .soc-item span {
+    font-size: 24px;
+    color: #6c757d;
+  }
+  
+  .footer3 .soc-item span:hover {
+    color: #007bff;
+  }
+  
+  /* Dark mode */
+  body.dark-mode {
+    background-color: #121212;
+    color: #ffffff;
+  }
+  
+  body.dark-mode .navbar,
+  body.dark-mode .footer3 {
+    background-color: #333333;
+  }
+  
+  body.dark-mode .nav-link {
+    color: #ffffff;
+  }
+  
+  body.dark-mode .nav-link:hover {
+    color: #007bff;
+  }
+  
